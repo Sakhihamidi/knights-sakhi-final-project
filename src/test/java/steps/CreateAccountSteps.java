@@ -17,7 +17,7 @@ public class CreateAccountSteps extends SeleniumUtility {
 
     @When("Click on Create Primary Account button")
     public void clickOnButton() {
-        getDriver().findElement(HomePage.CreatePrimaryAccountButton).click();
+        clickOnButton(HomePage.CreatePrimaryAccountButton);
     }
 
     @Then("Validate form title header is Create Primary Account Holder")
@@ -29,7 +29,8 @@ public class CreateAccountSteps extends SeleniumUtility {
 
     @When("Enter email address")
     public void enterEmailAddress() {
-        getDriver().findElement(CreateAccount.emailField).sendKeys(generateRandomEmail());
+
+        sendKeys(CreateAccount.emailField, generateRandomEmail());
     }
 
     // Rando email
@@ -59,68 +60,61 @@ public class CreateAccountSteps extends SeleniumUtility {
 
     @When("Select title or prefix")
     public void selectTitleOrPrefix() {
-        getDriver().findElement(CreateAccount.titleOrPrefixField).sendKeys("Mr.");
+        sendKeys(CreateAccount.titleOrPrefixField, "Mr.");
     }
-
     @When("Enter first name")
     public void enterFirstName() {
-        getDriver().findElement(CreateAccount.firstNameField).sendKeys("Amir");
+        sendKeys(CreateAccount.firstNameField, "Amir");
     }
 
     @When("Enter last name")
     public void enterLastName() {
-        getDriver().findElement(CreateAccount.lastNameField).sendKeys("Amiri");
+        sendKeys(CreateAccount.lastNameField, "Amiri");
     }
 
     @When("Select gender")
     public void selectGender() {
-        getDriver().findElement(CreateAccount.genderField).sendKeys("Male");
+        sendKeys(CreateAccount.genderField, "Male");
     }
 
     @When("Select marital status")
     public void selectMaritalStatus() {
-        getDriver().findElement(CreateAccount.maritalStatusField).sendKeys("Male");
+        sendKeys(CreateAccount.maritalStatusField,"Married");
     }
-
     @When("Enter employment status")
     public void enterEmploymentStatus() {
-        getDriver().findElement(CreateAccount.employmentStatusField).sendKeys("Employed");
+        sendKeys(CreateAccount.employmentStatusField, "Employed");
     }
-
     @When("Enter date of birth")
     public void enterDateOfBirth() {
-        getDriver().findElement(CreateAccount.dateOfBirthField).sendKeys("07/20/1986");
+        sendKeys(CreateAccount.dateOfBirthField, "07/15/1990");
     }
-
     @When("Click on Create Account button")
     public void clickOnCreateButton() {
-        getDriver().findElement(CreateAccount.createAccountButton).click();
+        clickOnButton(CreateAccount.createAccountButton);
     }
-
     @Then("Validate form title header is Sign up your account")
-
     public void validateFormTitleHeaderIsSignUpYourAccount() throws InterruptedException {
         Thread.sleep(1000);
         String actualFormHeaderTitle = getElementText(CreateAccount.formTitleHeader);
         System.out.println(actualFormHeaderTitle);
         Assert.assertEquals("Validate Pager Title Header", "Sign up your account", actualFormHeaderTitle);
     }
-
     @Then("Validate email address")
     public void validateEmailAddress() {
         String actualEmailAddress = getElementText(CreateAccount.emailAddValidation);
         Assert.assertEquals("Validate Pager Title Header", email, actualEmailAddress);
     }
-
     @When("Enter an existing email address")
     public void enterAnExistingEmailAddress() {
-        getDriver().findElement(CreateAccount.emailField).sendKeys("Ahmad@tekschool.us");
+        sendKeys(CreateAccount.emailField, "Ahmad@tekschool.us");
     }
-
     @Then("Validate create account error message is Account with email address is exist")
     public void validateCreateAccountErrorMessageIsAccountWithEmailIsExist() {
-        String elementText = getElementText (CreateAccount.CreateAccErrorMessage);
+        String  elementText1;
+        elementText1 = String.valueOf(getDriver().findElement(CreateAccount.CreateAccErrorMessage));
+        //   String elementText = getElementText (CreateAccount.CreateAccErrorMessage);
 
-        Assert.assertNull("any Message", elementText);
+        Assert.assertNull("any Message", elementText1);
     }
 }

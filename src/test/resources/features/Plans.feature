@@ -1,5 +1,7 @@
-Feature:
+@Plans
+Feature:Plans Tests
 
+@Plans_1
   Scenario: Navigate to Customer Service Portal with valid CSR credentials and navigate to Plans Page. Validate 4 row of data is present.
     When Click on Login button
     When Enter user name in user name filed as supervisor
@@ -8,6 +10,7 @@ Feature:
     When Click on Plans
     Then Validate 4 row of data is present
 
+@Plans_2
   Scenario: Navigate to Customer Service Portal with valid CSR credentials and navigate to Plans Page. Then validate Create Date is today's date in (EST Time zone) and Date Expire is a day after (EST Time Zone)
     When Click on Login button
     When Enter user name in user name filed as supervisor

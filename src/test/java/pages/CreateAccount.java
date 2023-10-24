@@ -18,7 +18,7 @@ public class CreateAccount {
     public final static By createAccountButton = By.xpath("//div[1]/div/div[2]/div/div/div/form/div/div[2]/button[1]");
     public final static By emailAddValidation = By.xpath("//html/body/div[1]/div/div[2]/div/div/div/h2[3]");
     public final static By formTitleHeader = By.xpath("/html/body/div[1]/div/div[2]/div/div/div/h2[1]");
-    public final static By CreateAccErrorMessage = By.xpath("//html/body/div[1]/div/div[2]/div/div/div/form/div[1]/text()");
+    public final static By CreateAccErrorMessage = By.xpath("//div/div[2]/div/div/div/form/div[1]/text()");
 
 
 

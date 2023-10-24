@@ -13,7 +13,7 @@ import static org.openqa.selenium.By.*;
 public class HomePageSteps extends SeleniumUtility {
 
     @Then("Validate home page header title is {string}")
-    public void validatePageTitleheader(String expectedPageTitle){
+    public void validatePageTitleHeader(String expectedPageTitle){
         String actualHeaderTitle = getElementText(HomePage.pageTitleHeader);
 
         Assert.assertEquals("Validate Pager Title Header", expectedPageTitle, actualHeaderTitle);

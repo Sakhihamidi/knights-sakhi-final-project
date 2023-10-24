@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.HomePage;
 
 import java.time.Duration;
 
@@ -16,10 +17,22 @@ public class SeleniumUtility extends BaseSetup {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofMinutes(1));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element.getText();
-
+    }
+    public void clickOnButton(By locator) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofMinutes(1));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.click();
     }
 
-    public void clickOnElement(By locator){
-        clickOnElement(locator);
+    public void sendKeys(By locator, String key){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofMinutes(1));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.sendKeys(key);
+
+
+
     }
 }
+
+
+

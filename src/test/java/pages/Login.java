@@ -10,10 +10,10 @@ public class Login {
 
     public final static By logInButton = By.xpath("//html/body/div[1]/div/div[1]/div/a[2]");
 
-    public final static By SignInButton = By.xpath("//div[1]/div/div[2]/div/div/div/div/form/div/div[3]/button[1]");
+    public final static By signInButton = By.xpath("//div[1]/div/div[2]/div/div/div/div/form/div/div[3]/button[1]");
     public final static By customerServicePortalHeader = By.xpath("//div[1]/div/div[1]/div/h2");
 
-    public final static By WrongUserErrorMessage = By.xpath("//html/body/div[1]/div/div[2]/div/div/div/div/div/text()");
+    public final static By WrongUserErrorMessage = By.xpath("//html/body/div[1]/div/div[2]/div/div/div/div/div/span");
 
 
 }
