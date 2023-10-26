@@ -32,7 +32,7 @@ Feature: Create Account Test
       When Enter employment status
       When Enter date of birth
       When Click on Create Account button
-      Then Validate create account error message is Account with email address is exist
+      Then Validate create account error message as ERROR
 
 
 

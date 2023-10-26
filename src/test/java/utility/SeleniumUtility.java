@@ -28,9 +28,10 @@ public class SeleniumUtility extends BaseSetup {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofMinutes(1));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         element.sendKeys(key);
+    }
 
-
-
+    public WebDriverWait getWait() {
+        return new WebDriverWait(getDriver(), Duration.ofMinutes(1));
     }
 }
 

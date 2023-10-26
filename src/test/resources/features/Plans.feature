@@ -17,5 +17,5 @@ Feature:Plans Tests
     When Enter password in password filed as tek_supervisor
     When Click on Sign In button
     When Click on Plans
-    Then Validate Create Date is today's date in (EST Time zone
-    Then Validate Date Expire is a day after (EST Time Zone)
+    Then Validate Create Date is today's date in EST Time zone
+    Then Validate Date Expire is a day after EST Time Zone

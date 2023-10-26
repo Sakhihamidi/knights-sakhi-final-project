@@ -13,7 +13,7 @@ public class Login {
     public final static By signInButton = By.xpath("//div[1]/div/div[2]/div/div/div/div/form/div/div[3]/button[1]");
     public final static By customerServicePortalHeader = By.xpath("//div[1]/div/div[1]/div/h2");
 
-    public final static By WrongUserErrorMessage = By.xpath("//html/body/div[1]/div/div[2]/div/div/div/div/div/span");
+    public final static By errorMessage = By.xpath("//div[1]/div/div[2]/div/div/div/div/div/div");
 
 
 }
