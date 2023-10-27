@@ -18,11 +18,9 @@ Feature: Account Tests
     When Enter password in password filed as tek_supervisor
     When Click on Sign In button
     When Click on Accounts button
-    When Change item per page to "Show 5"
-    Then Validate accounts table have "Show 5" rows
-    When Change item per page to "Show 10"
-    Then Validate accounts table have "Show 10" rows
-    When Change item per page to "Show 25"
-   # Then Validate accounts table have "25" rows
-    When Change item per page to "Show 50"
-   # Then Validate accounts table have "50" rows
+    When Change item per page to 10
+    Then Validate accounts table have 10 rows
+    When Change item per page to 25
+    Then Validate accounts table have 25 rows
+    When Change item per page to 50
+    Then Validate accounts table have 50 rows

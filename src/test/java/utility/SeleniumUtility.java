@@ -33,6 +33,9 @@ public class SeleniumUtility extends BaseSetup {
     public WebDriverWait getWait() {
         return new WebDriverWait(getDriver(), Duration.ofMinutes(1));
     }
+
+
+
 }
 
 

@@ -28,8 +28,7 @@ public class CreateAccountSteps extends SeleniumUtility {
 // Create Account and fill form steps
 
     @When("Enter email address")
-    public void enterEmailAddress() {
-
+    public void enterEmailAddress() throws InterruptedException {
         sendKeys(CreateAccount.emailField, generateRandomEmail());
     }
 
@@ -51,7 +50,6 @@ public class CreateAccountSteps extends SeleniumUtility {
 
         // Append the domain
         randomEmail.append("@").append(domain);
-
         email = randomEmail.toString();
         return email;
 

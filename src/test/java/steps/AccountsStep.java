@@ -17,51 +17,65 @@ import java.util.List;
 public class AccountsStep extends SeleniumUtility {
 
     @When("Click on Accounts button")
-    public void clickOnAccountsButton()   {
+    public void clickOnAccountsButton() {
         clickOnButton(Accounts.AccountPageButton);
     }
+
     @Then("Validate 5 rows as default")
     public void validate_rows_as_default() throws InterruptedException {
         int actualSize = getListOfElements(Accounts.AccountTableLocator).size();
-        Assert.assertEquals("Validate Table Rows",5, actualSize);
+        Assert.assertEquals("Validate Table Rows", 5, actualSize);
         Thread.sleep(6000);
     }
+
     public List<WebElement> getListOfElements(By locator) {
         return waitUntilVisibilityOfAllElement(locator);
     }
+
     public List<WebElement> waitUntilVisibilityOfAllElement(By locator) {
         return getWait().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
 
-    @When("Change item per page to {string}")
-    public void changeItemPerPage(String itemPerPage) throws InterruptedException {
-        //Click to open the dropdown
-        //clickOnButton(Accounts.AccountTableLocator);
-        selectFromDropDown(Accounts.DropDownItems, itemPerPage);
 
-    }
-    public void selectFromDropDown(By locator, String option) throws InterruptedException {
-        List<WebElement> items = getListOfElements(locator);
-        for(WebElement element : items) {
-            String text = element.getText();
-            if (text.contains(option)) {
-            element.click();
-            Thread.sleep(3000);
-
-            }gi
-        }
+    @When("Change item per page to 10")
+    public void changeItemTo10() throws InterruptedException {
+        clickOnButton(Accounts.getDropDownOptions);
+        clickOnButton(Accounts.dropDown10);
+        Thread.sleep(5000);
     }
 
-    @Then("Validate accounts table have {string} rows")
-        public void validateAccountTableRows(String expectedRows) throws InterruptedException {
-            List<WebElement>  tableRowsElements = getListOfElements(Accounts.AccountTableLocator);
-            Assert.assertEquals("Validate Account Table row ",
-                    expectedRows,
-                    tableRowsElements.size());
-            Thread.sleep(3000);
+    @Then("Validate accounts table have 10 rows")
+    public void validateAccountsTableHave10Rows() throws InterruptedException {
+        int actualSize = getListOfElements(Accounts.AccountTableLocator).size();
+        Assert.assertEquals("Validate Table Rows", 10, actualSize);
+        Thread.sleep(6000);
+    }
+
+    @When("Change item per page to 25")
+    public void changeItemTo25() {
+        clickOnButton(Accounts.getDropDownOptions);
+        clickOnButton(Accounts.dropDown25);
+    }
+
+    @Then("Validate accounts table have 25 rows")
+    public void validateAccountsTableHave25Rows() throws InterruptedException {
+        int actualSize = getListOfElements(Accounts.AccountTableLocator).size();
+        Assert.assertEquals("Validate Table Rows", 25, actualSize);
+        Thread.sleep(6000);
 
     }
 
+    @When("Change item per page to 50")
+    public void changeItemPerPageTo50() throws InterruptedException {
+        clickOnButton(Accounts.getDropDownOptions);
+        clickOnButton(Accounts.dropDown50);
+        Thread.sleep(6000);
+    }
 
-
+    @Then("Validate accounts table have 50 rows")
+    public void validateAccountsTableHave50Rows() throws InterruptedException {
+        int actualSize = getListOfElements(Accounts.AccountTableLocator).size();
+        Assert.assertEquals("Validate Table Rows", 50, actualSize);
+        Thread.sleep(6000);
+    }
 }
