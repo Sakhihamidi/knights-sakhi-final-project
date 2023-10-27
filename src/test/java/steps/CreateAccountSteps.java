@@ -12,8 +12,6 @@ import utility.SeleniumUtility;
 import java.util.Random;
 
 public class CreateAccountSteps extends SeleniumUtility {
-    public static String email;
-
 
     @When("Click on Create Primary Account button")
     public void clickOnButton() {
@@ -31,30 +29,6 @@ public class CreateAccountSteps extends SeleniumUtility {
     public void enterEmailAddress() throws InterruptedException {
         sendKeys(CreateAccount.emailField, generateRandomEmail());
     }
-
-    // Rando email
-    public static String generateRandomEmail() {
-        String allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        String domain = "tekschool.us";
-        int usernameLength = 10;
-
-        StringBuilder randomEmail = new StringBuilder();
-
-        Random random = new Random();
-
-        // Generate the username part
-        for (int i = 0; i < usernameLength; i++) {
-            int index = random.nextInt(allowedChars.length());
-            randomEmail.append(allowedChars.charAt(index));
-        }
-
-        // Append the domain
-        randomEmail.append("@").append(domain);
-        email = randomEmail.toString();
-        return email;
-
-    }
-
 
     @When("Select title or prefix")
     public void selectTitleOrPrefix() {

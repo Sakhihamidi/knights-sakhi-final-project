@@ -1,11 +1,13 @@
 package base;
 
+import io.cucumber.core.internal.com.fasterxml.jackson.core.base.GeneratorBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import steps.GeneralSteps;
 
 import java.time.Duration;
 
-public class BaseSetup {
+public class BaseSetup extends GeneralSteps {
     private static WebDriver driver;
 
     // I can passing a new variable for URL as well and pass it to driver.get
