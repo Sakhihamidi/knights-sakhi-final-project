@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class Login {
 
-    public final static By userNameField = By.xpath("//div[1]/div/div[2]/div/div/div/div/form/div/div[1]/input");
+    public final static By userNameField = By.xpath("//div/form/div/div[1]/input");
 
     public final static By passwordField = By.xpath("//div[1]/div/div[2]/div/div/div/div/form/div/div[2]/div/input");
 

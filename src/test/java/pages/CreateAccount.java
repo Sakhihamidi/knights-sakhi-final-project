@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class CreateAccount {
 
-    public final static By CreateAccPageTitleHeader = By.xpath("//html/body/div[1]/div/div[2]/div/div/div/h2");
+    public final static By CreateAccPageTitleHeader = By.xpath("//div[2]/div/div/div/h2[1]");
 
     public final static By emailField = By.xpath("//div[1]/div/div[2]/div/div/div/form/div/div[1]/div[1]/input");
     public final static By titleOrPrefixField = By.xpath("//div/div[2]/div/div/div/form/div/div[1]/div[2]/div/select");

@@ -20,8 +20,9 @@ public class CreateAccountSteps extends SeleniumUtility {
 
     @Then("Validate form title header is Create Primary Account Holder")
     public void validateFormTitleHeaderIs() {
-        String actualHeaderTitle = getElementText(CreateAccount.CreateAccPageTitleHeader);
-        Assert.assertEquals("Validate Pager Title Header", "Create Primary Account Holder", actualHeaderTitle);
+        validateTitleHeader(CreateAccount.CreateAccPageTitleHeader, "Create Primary Account Holder");
+        /*String actualHeaderTitle = getElementText(CreateAccount.CreateAccPageTitleHeader);
+        Assert.assertEquals("Validate Pager Title Header", "Create Primary Account Holder", actualHeaderTitle);*/
     }
 // Create Account and fill form steps
 
@@ -67,15 +68,17 @@ public class CreateAccountSteps extends SeleniumUtility {
     }
     @Then("Validate form title header is Sign up your account")
     public void validateFormTitleHeaderIsSignUpYourAccount() throws InterruptedException {
-        Thread.sleep(1000);
-        String actualFormHeaderTitle = getElementText(CreateAccount.formTitleHeader);
+        Thread.sleep(500);
+        validateTitleHeader(CreateAccount.CreateAccPageTitleHeader, "Sign up your account");
+       /* String actualFormHeaderTitle = getElementText(CreateAccount.formTitleHeader);
         System.out.println(actualFormHeaderTitle);
-        Assert.assertEquals("Validate Pager Title Header", "Sign up your account", actualFormHeaderTitle);
+        Assert.assertEquals("Validate Pager Title Header", "Sign up your account", actualFormHeaderTitle);*/
     }
     @Then("Validate email address")
     public void validateEmailAddress() {
-        String actualEmailAddress = getElementText(CreateAccount.emailAddValidation);
-        Assert.assertEquals("Validate Pager Title Header", email, actualEmailAddress);
+        validateTitleHeader(CreateAccount.emailAddValidation, email);
+       /* String actualEmailAddress = getElementText(CreateAccount.emailAddValidation);
+        Assert.assertEquals("Validate Pager Title Header", email, actualEmailAddress);*/
     }
     @When("Enter an existing email address")
     public void enterAnExistingEmailAddress() {
