@@ -16,7 +16,8 @@ import java.util.Random;
 
 public class GeneralSteps {
     public static String email;
-    public static String formatter;
+
+    public static String todayDate;
     // Rando email
     public static String generateRandomEmail() {
         String allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -58,7 +59,14 @@ public class GeneralSteps {
             return tomorrowAsString;
         }
 
-
+    public static String todayDate(){
+        LocalDate currentDate = LocalDate.now();
+        // Define a custom date format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+        // Format the current date as a string
+        todayDate = currentDate.format(formatter).trim();
+        return todayDate;
+    }
 
     }
 
