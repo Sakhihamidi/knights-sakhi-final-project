@@ -14,19 +14,28 @@ public class HomePageSteps extends SeleniumUtility {
 
     @Then("Validate home page header title is {string}")
     public void validatePageTitleHeader(String expectedPageTitle){
-        String actualHeaderTitle = getElementText(HomePage.pageTitleHeader);
+        validateTitleHeader(HomePage.pageTitleHeader, expectedPageTitle);
 
-        Assert.assertEquals("Validate Pager Title Header", expectedPageTitle, actualHeaderTitle);
+        /*String actualHeaderTitle = getElementText(HomePage.pageTitleHeader);
+
+        Assert.assertEquals("Validate Pager Title Header", expectedPageTitle, actualHeaderTitle);*/
 
     }
     @Then("Validate {string} Button is exist")
     public void validateCreatePrimaryAccountButton(String buttonName){
-        String createPrimaryAccountButton = getElementText(HomePage.CreatePrimaryAccountButton);
-        Assert.assertEquals("Validate Create Primary Account Button", buttonName, createPrimaryAccountButton);
+        validateTitleHeader(HomePage.CreatePrimaryAccountButton, buttonName);
+
+      /*  String createPrimaryAccountButton = getElementText(HomePage.CreatePrimaryAccountButton);
+        Assert.assertEquals("Validate Create Primary Account Button", buttonName, createPrimaryAccountButton);*/
 
     }
 
 
+    @Then("validate page title header is {string}")
+    public void validatePageTitleHeaderIs(String expectedPageTitle) {
+        String actualPageTitle = getDriver().getTitle();
+        Assert.assertEquals(actualPageTitle, expectedPageTitle);
+    }
 }
 
 

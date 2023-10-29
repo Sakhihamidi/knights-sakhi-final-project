@@ -25,11 +25,16 @@ public class LoginSteps extends SeleniumUtility {
     public void clickOnSignInButton() {
         clickOnButton(Login.signInButton);
     }
-    @Then("Validate home page header title is Customer Service Portal")
-    public void validateHomePageHeaderTitle() throws InterruptedException {
+
+    @Then("Validate home page header title as {string}")
+    public void validateHomePageHeaderTitle(String homePageHeaderTitle) throws InterruptedException {
         Thread.sleep(1000);
-        String actualHeaderTitle = getDriver().findElement(Login.customerServicePortalHeader).getText();
-        Assert.assertEquals("Customer Service Portal", actualHeaderTitle);
+        validateTitleHeader(Login.customerServicePortalHeader, homePageHeaderTitle);
+
+        /*String actualHeaderTitle = getDriver().findElement(Login.customerServicePortalHeader).getText();
+        Assert.assertEquals("Customer Service Portal", actualHeaderTitle);*/
+
+
     }
    /* @When("Enter Wrong user name in user name field")
     public void enterWrongUserName() {
@@ -59,8 +64,10 @@ public class LoginSteps extends SeleniumUtility {
     }
     @Then("Validate error message as {string}")
     public void validateErrorMessage(String errorMessage) {
-        String actualErrorMessage = getElementText(Login.errorMessage);
-        Assert.assertEquals(errorMessage, actualErrorMessage);
+        validateTitleHeader(Login.errorMessage, errorMessage);
+
+        /*String actualErrorMessage = getElementText(Login.errorMessage);
+        Assert.assertEquals(errorMessage, actualErrorMessage);*/
     }
 }
 

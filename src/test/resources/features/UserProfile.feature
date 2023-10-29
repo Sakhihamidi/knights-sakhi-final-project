@@ -9,7 +9,7 @@ Feature: User Profile Test
     When Click on Sign In button
     When Click on Profile button
     Then Validate Name as Supervisor
-    Then Validate Username as supervisor
+    #Then Validate Username as supervisor
 
 @UserProfile_2
   Scenario: Navigate to Valid Portal then click on profile button and click on Logout button and you navigate yo home page

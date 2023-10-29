@@ -7,7 +7,7 @@ Feature: Login Tests
     When Enter user name in user name filed as supervisor
     When Enter password in password filed as tek_supervisor
     When Click on Sign In button
-    Then Validate home page header title is Customer Service Portal
+    Then Validate home page header title as "Customer Service Portal"
 
   @Login_2
   Scenario Outline: Navigate to login to validate error message as expected

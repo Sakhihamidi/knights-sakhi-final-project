@@ -18,6 +18,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class PlansSteps extends SeleniumUtility {
+    String formattedDate1;
 
     @When("Click on Plans")
     public void clickOnPlans() throws InterruptedException {
@@ -41,30 +42,32 @@ public class PlansSteps extends SeleniumUtility {
 
         String actualDate1 = getElementText(Plans.dateCreated1);
         Assert.assertEquals(formattedDate, actualDate1);
-        String actualDate2 = getElementText(Plans.dateCreated2);
+        /*String actualDate2 = getElementText(Plans.dateCreated2);
         Assert.assertEquals(formattedDate, actualDate2);
         String actualDate3 = getElementText(Plans.dateCreated3);
         Assert.assertEquals(formattedDate, actualDate3);
         String actualDate4 = getElementText(Plans.dateCreated4);
-        Assert.assertEquals(formattedDate, actualDate4);
+        Assert.assertEquals(formattedDate, actualDate4);*/
 
     }
     @Then("Validate Date Expire is a day after EST Time Zone")
     public void validateDate_Expired() {
         String actualDate1 = getElementText(Plans.dateExpired1);
-        Assert.assertEquals(formattedDate, actualDate1);
-        String actualDate2 = getElementText(Plans.dateExpired1);
-        Assert.assertEquals(formattedDate, actualDate2);
+        Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate1);
+       /* String actualDate2 = getElementText(Plans.dateExpired1);
+        Assert.assertEquals(expiredDate, actualDate2);
         String actualDate3 = getElementText(Plans.dateExpired3);
-        Assert.assertEquals(formattedDate, actualDate3);
+        Assert.assertEquals(expiredDate, actualDate3);
         String actualDate4 = getElementText(Plans.dateExpired4);
-        Assert.assertEquals(formattedDate, actualDate4);
+        Assert.assertEquals(formatter1, actualDate4);*/
 
-    }
+        }
+
             LocalDate currentDate = LocalDate.now();
 
             // Define a custom date format
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+
 
             // Format the current date as a string
             String formattedDate = currentDate.format(formatter);

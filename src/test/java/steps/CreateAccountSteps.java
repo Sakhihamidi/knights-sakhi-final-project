@@ -88,10 +88,11 @@ public class CreateAccountSteps extends SeleniumUtility {
     public void validateCreateAccountErrorMessageIsAccountWithEmailIsExist() {
         //String  elementText1;
         //elementText1 = String.valueOf(getDriver().findElement(CreateAccount.CreateAccErrorMessage));
-       String elementText = getDriver().findElement(CreateAccount.CreateAccErrorMessage).getText().trim();
+        validateTitleHeader(CreateAccount.CreateAccErrorMessage, "ERROR");
+       /*String elementText = getDriver().findElement(CreateAccount.CreateAccErrorMessage).getText().trim();
         System.out.println(elementText);
 
 
-        Assert.assertEquals("ERROR", elementText);
+        Assert.assertEquals("ERROR", elementText);*/
     }
 }

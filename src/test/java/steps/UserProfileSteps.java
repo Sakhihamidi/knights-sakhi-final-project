@@ -12,8 +12,8 @@ public class UserProfileSteps extends SeleniumUtility {
 
     @When("Click on Profile button")
     public void clickOnProfileButton() throws InterruptedException {
-        clickOnButton(UserProfile.userProfileButton);
         Thread.sleep(8000);
+        clickOnButton(UserProfile.userProfileButton);
     }
     @Then("Validate Name as Supervisor")
     public void validateNameInProfile() throws InterruptedException {
