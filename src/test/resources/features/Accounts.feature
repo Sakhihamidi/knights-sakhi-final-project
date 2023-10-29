@@ -1,4 +1,4 @@
-@Accounts
+@Accounts @all
 Feature: Account Tests
 
   @Accounts_1

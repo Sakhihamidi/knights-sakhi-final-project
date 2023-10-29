@@ -1,4 +1,4 @@
-@Plans
+@Plans @all
 Feature:Plans Tests
 
 @Plans_1

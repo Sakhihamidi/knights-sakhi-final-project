@@ -1,4 +1,4 @@
-@CreateAccount
+@CreateAccount @all
 Feature: Create Account Test
 
 @CreateAccount_1

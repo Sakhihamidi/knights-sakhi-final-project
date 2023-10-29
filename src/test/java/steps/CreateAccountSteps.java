@@ -21,13 +21,11 @@ public class CreateAccountSteps extends SeleniumUtility {
     @Then("Validate form title header is Create Primary Account Holder")
     public void validateFormTitleHeaderIs() {
         validateTitleHeader(CreateAccount.CreateAccPageTitleHeader, "Create Primary Account Holder");
-        /*String actualHeaderTitle = getElementText(CreateAccount.CreateAccPageTitleHeader);
-        Assert.assertEquals("Validate Pager Title Header", "Create Primary Account Holder", actualHeaderTitle);*/
+
     }
-// Create Account and fill form steps
 
     @When("Enter email address")
-    public void enterEmailAddress() throws InterruptedException {
+    public void enterEmailAddress()  {
         sendKeys(CreateAccount.emailField, generateRandomEmail());
     }
 
@@ -70,15 +68,12 @@ public class CreateAccountSteps extends SeleniumUtility {
     public void validateFormTitleHeaderIsSignUpYourAccount() throws InterruptedException {
         Thread.sleep(500);
         validateTitleHeader(CreateAccount.CreateAccPageTitleHeader, "Sign up your account");
-       /* String actualFormHeaderTitle = getElementText(CreateAccount.formTitleHeader);
-        System.out.println(actualFormHeaderTitle);
-        Assert.assertEquals("Validate Pager Title Header", "Sign up your account", actualFormHeaderTitle);*/
+
     }
     @Then("Validate email address")
     public void validateEmailAddress() {
         validateTitleHeader(CreateAccount.emailAddValidation, email);
-       /* String actualEmailAddress = getElementText(CreateAccount.emailAddValidation);
-        Assert.assertEquals("Validate Pager Title Header", email, actualEmailAddress);*/
+
     }
     @When("Enter an existing email address")
     public void enterAnExistingEmailAddress() {
@@ -86,13 +81,7 @@ public class CreateAccountSteps extends SeleniumUtility {
     }
     @Then("Validate create account error message as ERROR")
     public void validateCreateAccountErrorMessageIsAccountWithEmailIsExist() {
-        //String  elementText1;
-        //elementText1 = String.valueOf(getDriver().findElement(CreateAccount.CreateAccErrorMessage));
         validateTitleHeader(CreateAccount.CreateAccErrorMessage, "ERROR");
-       /*String elementText = getDriver().findElement(CreateAccount.CreateAccErrorMessage).getText().trim();
-        System.out.println(elementText);
 
-
-        Assert.assertEquals("ERROR", elementText);*/
     }
 }

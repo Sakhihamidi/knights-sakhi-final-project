@@ -15,9 +15,8 @@ import java.util.List;
 
 public class PlansSteps extends SeleniumUtility {
     @When("Click on Plans")
-    public void clickOnPlans() throws InterruptedException {
+    public void clickOnPlans() {
         clickOnButton(Plans.plansLink);
-        Thread.sleep(3000);
     }
     @Then("Validate 4 row of data is present")
     public void validateRowsOfData()  {
@@ -36,24 +35,24 @@ public class PlansSteps extends SeleniumUtility {
 
         String actualDate1 = getElementText(Plans.dateCreated1);
         Assert.assertEquals(GeneralSteps.todayDate(), actualDate1);
-        /*String actualDate2 = getElementText(Plans.dateCreated2);
-        Assert.assertEquals(formattedDate, actualDate2);
+        String actualDate2 = getElementText(Plans.dateCreated2);
+        Assert.assertEquals(GeneralSteps.todayDate(), actualDate2);
         String actualDate3 = getElementText(Plans.dateCreated3);
-        Assert.assertEquals(formattedDate, actualDate3);
+        Assert.assertEquals(GeneralSteps.todayDate(), actualDate3);
         String actualDate4 = getElementText(Plans.dateCreated4);
-        Assert.assertEquals(formattedDate, actualDate4);*/
+        Assert.assertEquals(GeneralSteps.todayDate(), actualDate4);
 
     }
     @Then("Validate Date Expire is a day after EST Time Zone")
     public void validateDate_Expired() {
         String actualDate1 = getElementText(Plans.dateExpired1);
         Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate1);
-       /* String actualDate2 = getElementText(Plans.dateExpired1);
-        Assert.assertEquals(expiredDate, actualDate2);
+        String actualDate2 = getElementText(Plans.dateExpired1);
+        Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate2);
         String actualDate3 = getElementText(Plans.dateExpired3);
-        Assert.assertEquals(expiredDate, actualDate3);
+        Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate3);
         String actualDate4 = getElementText(Plans.dateExpired4);
-        Assert.assertEquals(formatter1, actualDate4);*/
+        Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate4);
 
         }
 

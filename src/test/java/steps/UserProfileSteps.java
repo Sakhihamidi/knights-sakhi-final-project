@@ -12,28 +12,24 @@ public class UserProfileSteps extends SeleniumUtility {
 
     @When("Click on Profile button")
     public void clickOnProfileButton() throws InterruptedException {
-        Thread.sleep(8000);
+        Thread.sleep(500);
         clickOnButton(UserProfile.userProfileButton);
+        Thread.sleep(500);
+
     }
-    @Then("Validate Name as Supervisor")
-    public void validateNameInProfile() throws InterruptedException {
+    @Then("Validate Name as {string}")
+    public void validateNameInProfile(String expectedName) {
        String actualProfileName = getDriver().findElement(UserProfile.profileName).getText();
-        Assert.assertEquals("Supervisor", actualProfileName);
-        Thread.sleep(1000);
+        Assert.assertEquals(expectedName, actualProfileName);
     }
-    @Then("Validate Username as supervisor")
-    public void validateUsernameInProfile() {
-        String actualProfileUserName = getDriver().findElement(UserProfile.profileUserName).getAccessibleName();
-        Assert.assertEquals("supervisor", actualProfileUserName);
+    @Then("Validate Username as {string}")
+    public void validateUsernameInProfile(String expectedUserName) {
+        validate(UserProfile.profileUserName, expectedUserName);
+
     }
     @When("Click on Logout button")
     public void clickOnLogoutButton() {
         clickOnButton(UserProfile.profileLogoutButton);
-    }
-    @Then("Validate navigation to homepage")
-    public void validateNavigationToHomepage() {
-        String actualPageTitleHeader = getDriver().findElement(HomePage.pageTitleHeader).getText();
-        Assert.assertEquals("TEK Insurance App", actualPageTitleHeader);
     }
 
 }

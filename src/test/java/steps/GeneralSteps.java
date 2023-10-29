@@ -53,9 +53,8 @@ public class GeneralSteps {
 
             // Convert tomorrow's date to a string using the defined format
             String tomorrowAsString = tomorrow.format(formatter);
-
             // Print tomorrow's date as a string
-            System.out.println("Tomorrow's date: " + tomorrowAsString);
+            System.out.println();
             return tomorrowAsString;
         }
 

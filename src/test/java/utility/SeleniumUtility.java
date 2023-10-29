@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Accounts;
+import pages.UserProfile;
 
 import java.time.Duration;
 import java.util.List;
@@ -39,8 +40,6 @@ public class SeleniumUtility extends BaseSetup {
         int actualSize = getListOfElements(locator).size();
         Assert.assertEquals("Validate Table Rows", expectedValue, actualSize);
     }
-
-
     public List<WebElement> getListOfElements(By locator) {
         return waitUntilVisibilityOfAllElement1(locator);
     }
@@ -58,5 +57,10 @@ public class SeleniumUtility extends BaseSetup {
         String actualHeaderTitle = getElementText(locator);
         Assert.assertEquals(expectedValue, actualHeaderTitle);
     }
+    public void validate(By locator, String expected) {
+        String actual = getDriver().findElement(UserProfile.profileUserName).getText();
+        Assert.assertEquals(expected, actual);
+    }
+
 
 }

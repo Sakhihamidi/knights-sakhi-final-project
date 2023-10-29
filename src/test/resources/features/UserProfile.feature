@@ -1,4 +1,4 @@
-@UserProfile
+@UserProfile @all
 Feature: User Profile Test
 
 @UserProfile_1
@@ -8,8 +8,8 @@ Feature: User Profile Test
     When Enter password in password filed as tek_supervisor
     When Click on Sign In button
     When Click on Profile button
-    Then Validate Name as Supervisor
-    #Then Validate Username as supervisor
+    Then Validate Name as "Supervisor"
+    Then Validate Username as "supervisor"
 
 @UserProfile_2
   Scenario: Navigate to Valid Portal then click on profile button and click on Logout button and you navigate yo home page
@@ -19,5 +19,4 @@ Feature: User Profile Test
     When Click on Sign In button
     When Click on Profile button
     When Click on Logout button
-    Then Validate navigation to homepage
-
+  Then Validate home page header title is "TEK Insurance App"
