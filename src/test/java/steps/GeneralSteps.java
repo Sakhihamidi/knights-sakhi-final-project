@@ -49,7 +49,7 @@ public class GeneralSteps {
             LocalDate tomorrow = today.plusDays(1);
 
             // Define a date format (optional)
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
 
             // Convert tomorrow's date to a string using the defined format
             String tomorrowAsString = tomorrow.format(formatter);

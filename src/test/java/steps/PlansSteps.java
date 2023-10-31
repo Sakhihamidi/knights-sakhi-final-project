@@ -46,13 +46,13 @@ public class PlansSteps extends SeleniumUtility {
     @Then("Validate Date Expire is a day after EST Time Zone")
     public void validateDate_Expired() {
         String actualDate1 = getElementText(Plans.dateExpired1);
-        Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate1);
-        String actualDate2 = getElementText(Plans.dateExpired1);
-        Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate2);
+        Assert.assertEquals(CreateTomorrowDate(), actualDate1);
+        String actualDate2 = getElementText(Plans.dateExpired2);
+        Assert.assertEquals(CreateTomorrowDate(), actualDate2);
         String actualDate3 = getElementText(Plans.dateExpired3);
-        Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate3);
+        Assert.assertEquals(CreateTomorrowDate(), actualDate3);
         String actualDate4 = getElementText(Plans.dateExpired4);
-        Assert.assertEquals(GeneralSteps.CreateTomorrowDate(), actualDate4);
+        Assert.assertEquals(CreateTomorrowDate(), actualDate4);
 
         }
 

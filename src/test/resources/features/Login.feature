@@ -1,9 +1,13 @@
 @Login @all
 Feature: Login Tests
 
+  Background: Login steps for all scenarios
+    When Click on Login button
+
+
+
   @Login_1
   Scenario: Navigate to login by clicking on Login button and enter valid csr user
-    When Click on Login button
     When Enter user name in user name filed as supervisor
     When Enter password in password filed as tek_supervisor
     When Click on Sign In button
@@ -11,7 +15,6 @@ Feature: Login Tests
 
   @Login_2
   Scenario Outline: Navigate to login to validate error message as expected
-    When Click on Login button
     When Enter userName as "<UserName>"
     When Enter password as "<Password>"
     When Click on Sign In button

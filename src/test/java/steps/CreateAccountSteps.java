@@ -25,8 +25,9 @@ public class CreateAccountSteps extends SeleniumUtility {
     }
 
     @When("Enter email address")
-    public void enterEmailAddress()  {
+    public void enterEmailAddress() throws InterruptedException {
         sendKeys(CreateAccount.emailField, generateRandomEmail());
+
     }
 
     @When("Select title or prefix")
