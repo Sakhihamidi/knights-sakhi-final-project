@@ -61,7 +61,7 @@ public class GeneralSteps {
     public static String todayDate(){
         LocalDate currentDate = LocalDate.now();
         // Define a custom date format
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
         // Format the current date as a string
         todayDate = currentDate.format(formatter).trim();
         return todayDate;
