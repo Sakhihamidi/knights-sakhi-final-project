@@ -1,5 +1,6 @@
 package base;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import steps.GeneralSteps;
@@ -56,7 +57,9 @@ public class BaseSetup extends GeneralSteps {
         String browserType = properties.getProperty("ui.browser.type");
 
         if (browserType.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
         } else if (browserType.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
         } else if (browserType.equalsIgnoreCase("edge")) {

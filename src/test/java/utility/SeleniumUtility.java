@@ -3,6 +3,8 @@ package utility;
 import base.BaseSetup;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -57,5 +59,15 @@ public class SeleniumUtility extends BaseSetup {
         String actual = getDriver().findElement(UserProfile.profileUserName).getText();
         Assert.assertEquals(expected, actual);
     }
+
+
+    public byte[] takeScreenshot() {
+        //Somehow attached screenshot of the failure
+        //Step 1) Take Screenshot with Selenium
+        TakesScreenshot screenshot = (TakesScreenshot) getDriver();
+        //for cucumber reports Output Type should Byte[]
+        return screenshot.getScreenshotAs(OutputType.BYTES);
+    }
+
 
 }
