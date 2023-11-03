@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Accounts;
 import pages.UserProfile;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -58,6 +57,5 @@ public class SeleniumUtility extends BaseSetup {
         String actual = getDriver().findElement(UserProfile.profileUserName).getText();
         Assert.assertEquals(expected, actual);
     }
-
 
 }
